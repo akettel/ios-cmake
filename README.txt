@@ -19,6 +19,7 @@ Small code change to grpc/third_party/protobuf/cmake/install.cmake
 	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT protoc
 	BUNDLE DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT protoc)
 
+You will have to change the CURRENT_DIR variable in the build-ios.sh script.
 
 ./build-ios.sh to run cmake
 run xcodebuild in cmake/binary.
