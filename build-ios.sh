@@ -2,7 +2,7 @@
 
 set CMAKE=`which cmake`
 set XCODEBUILD=`which xcodebuild`
-set CURRENT_DIR='/Users/andrew/Projects/Parthenon/Vernier/ios-cmake'
+set CURRENT_DIR='/Users/andrew/Projects/Parthenon/ios-cmake'
 
 rm -rf $CURRENT_DIR/cmake/binary/*
 
@@ -12,7 +12,7 @@ $CMAKE \
 -GXcode \
 -DCMAKE_BUILD_TYPE=Release \
 -DCMAKE_CXX_FLAGS=\ -frtti\ -fexceptions\ -stdlib=libc++\ -std=c++11 \
--DCMAKE_SHARED_LINKER_FLAGS=" -arch armv7s -miphoneos-version-min=10.2" \
+-DCMAKE_SHARED_LINKER_FLAGS=" -miphoneos-version-min=10.2" \
 -DCMAKE_C_FLAGS=\ -Doff64_t=u_int64_t\ -DNDEBUG\ -g\ -O0\ -pipe\ -fPIC \
 -DPROJECT_SOURCE_DIR=$CURRENT_DIR/grpc \
 -DCMAKE_TOOLCHAIN_FILE=${CURRENT_DIR}/toolchain/iOS.cmake \
@@ -23,7 +23,7 @@ $CMAKE \
 -DPERL_EXECUTABLE='/usr/bin/perl' \
 -DGO_EXECUTABLE='/usr/local/go/bin/go' \
 -DBUILD_SHARED_LIBS=1 \
-# -DCMAKE_SYSTEM_PROCESSOR='armv7'
+-DCMAKE_SYSTEM_PROCESSOR='aarch64'
 
 cd cmake/binary
 # $XCODEBUILD
